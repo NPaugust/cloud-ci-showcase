@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud CI/CD Showcase · Dr. Ahmad</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <header>
+        <h1>Cloud CI/CD Showcase</h1>
+        <p>Avgustine Chynarbekov · Dr. Ahmad</p>
+      </header>
+
+      <section>
+        <h2>Live API Status</h2>
+        <div id="status" class="status-box">Loading...</div>
+      </section>
+
+      <section>
+        <h2>What you get</h2>
+        <ul>
+          <li>Automated lint + tests on each push</li>
+          <li>Static documentation via GitHub Pages</li>
+          <li>Downloadable package for evaluation</li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      async function loadStatus() {
+        try {
+          const res = await fetch('/status');
+          const data = await res.json();
+          const info = await fetch('/api/info').then((r) => r.json());
+          document.getElementById('status').innerHTML = `
+            <strong>${data.app}</strong><br />
+            Status: <span class="ok">${data.status}</span><br />
+            Professor: ${data.professor}<br />
+            Env: ${data.environment}<br />
+            Timestamp: ${new Date(data.timestamp).toLocaleString()}<br />
+            Note: ${data.ciHint}<br />
+            Message: ${info.message}
+          `;
+        } catch (err) {
+          document.getElementById('status').textContent =
+            'Failed to load status: ' + err.message;
+        }
+      }
+
+      loadStatus();
+    </script>
+  </body>
+</html>
+

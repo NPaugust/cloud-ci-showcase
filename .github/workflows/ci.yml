@@ -29,12 +29,4 @@ jobs:
       - name: Unit tests
         run: npm test
 
-      - name: Build zip artifact
-        run: npm run zip
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: cloud-ci-showcase
-          path: cloud-ci-showcase.zip
 

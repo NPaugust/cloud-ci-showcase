@@ -4,8 +4,8 @@ Simple Express API + GitHub Pages site that demonstrates a complete CI/CD workfl
 
 ## Architecture
 
-- **Application** – Node.js/Express API exposing `/`, `/status`, `/health`, highlighting the course with Dr. Ahmad.
-- **CI** – GitHub Actions run linting, tests, and produce a downloadable ZIP artifact.
+- **Application** – Node.js/Express API exposing `/api/info`, `/status`, `/health` plus a static landing page served from `public/`.
+- **CI** – GitHub Actions run linting and unit tests on every push/PR to keep the codebase stable.
 - **CD** – Documentation site (`docs/`) is published via GitHub Pages; could be extended to deploy the API container.
 
 ![CI Status](https://github.com/NPaugust/cloud-ci-showcase/actions/workflows/ci.yml/badge.svg)
@@ -19,7 +19,7 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:8080/status` to see the JSON payload.
+Visit `http://localhost:8080` to see the UI and `http://localhost:8080/status` for JSON payload.
 
 ## Testing & Quality
 
@@ -28,10 +28,6 @@ npm run lint
 npm test
 npm run format
 ```
-
-## Packaging
-
-`npm run zip` creates `cloud-ci-showcase.zip` that contains the code, docs, and workflows. The CI workflow uploads the same file as an artifact and can be attached to a GitHub Release.
 
 ## GitHub Pages
 
@@ -50,4 +46,3 @@ npm run format
 - Screenshot the Actions run (success & failure).
 - Show the GitHub Pages site referencing the badge + download links.
 - Include the `/status` response from deployed API.
-

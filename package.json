@@ -8,8 +8,7 @@
     "start": "node src/index.js",
     "test": "cross-env NODE_ENV=test jest --runInBand",
     "lint": "eslint src tests",
-    "format": "prettier --write \"{src,tests,docs}/**/*.{js,json,md,html,css}\"",
-    "zip": "node scripts/create-zip.js"
+    "format": "prettier --write \"{src,tests,docs}/**/*.{js,json,md,html,css}\""
   },
   "keywords": [
     "cloud-computing",

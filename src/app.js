@@ -17,7 +17,7 @@ const createApp = () => {
 
   app.get('/api/info', (_req, res) => {
     res.json({
-      message: 'Welcome to the Cloud CI/CD Showcase API built for Dr. Ahmad.',
+      message: 'Welcome to the Cloud CI/CD Showcase API built for Midterm Project.',
       docs: 'Visit the GitHub Pages site to learn about the pipeline.',
       professor: 'Dr. Ahmad',
     });

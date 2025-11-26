@@ -1,0 +1,45 @@
+:root {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0f172a;
+  color: #0f172a;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #3b82f6, #0f172a 60%);
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  width: min(90%, 640px);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.4);
+}
+
+header h1 {
+  margin: 0;
+}
+
+.status-box {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  min-height: 6rem;
+  font-size: 0.95rem;
+}
+
+.status-box .ok {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
