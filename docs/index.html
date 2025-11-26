@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud CI/CD Showcase</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Cloud CI/CD Showcase</h1>
+      <p>Avgustine Chynarbekov · Cloud Computing Midterm with Dr. Ahmad</p>
+      <img
+        src="https://img.shields.io/badge/CI%2FCD-Automated-success?style=for-the-badge"
+        alt="CI/CD badge"
+      />
+    </header>
+
+    <section>
+      <h2>Project Overview</h2>
+      <p>
+        This repository contains a tiny Express API plus a GitHub Pages site that explains
+        the CI/CD pipeline. Every push triggers automated tests, packaging, and publishing
+        of the documentation site. The demo is personalized for Cloud Computing with
+        <strong>Dr. Ahmad</strong>.
+      </p>
+      <ul>
+        <li>Stack: Node.js, Express, Jest, GitHub Actions</li>
+        <li>Deployment targets: Docker-ready API + GitHub Pages</li>
+        <li>Goal: show full lifecycle from commit to deployment</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>CI/CD Pipeline</h2>
+      <ol>
+        <li><strong>CI:</strong> Run lint + unit tests on every push/PR.</li>
+        <li>
+          <strong>Package:</strong> Produce a downloadable ZIP artifact for the examiner.
+        </li>
+        <li><strong>CD:</strong> Publish this page automatically via GitHub Pages.</li>
+      </ol>
+      <p>
+        Current status:
+        <img
+          src="https://github.com/NPaugust/cloud-ci-showcase/actions/workflows/ci.yml/badge.svg"
+          alt="CI status badge"
+        />
+      </p>
+    </section>
+
+    <section>
+      <h2>Demo Links</h2>
+      <ul>
+        <li>
+          Zip archive:
+          <a
+            href="https://github.com/NPaugust/cloud-ci-showcase/releases/latest/download/cloud-ci-showcase.zip"
+            target="_blank"
+            >Download</a
+          >
+        </li>
+        <li>
+          PDF presentation:
+          <a href="./presentation/cloud-ci-showcase.pdf" target="_blank">View</a>
+          (replace with your exported slides)
+        </li>
+        <li>
+          API endpoint (after deployment):
+          <code>https://your-hostname/status</code>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How to Reproduce</h2>
+      <pre>
+git clone https://github.com/NPaugust/cloud-ci-showcase.git
+cd cloud-ci-showcase
+npm install
+npm run dev
+      </pre>
+      <p>
+        Update the workflow files with secrets (if pushing to Docker Hub or other cloud)
+        and re-run the pipelines to see automation in action.
+      </p>
+    </section>
+
+    <footer>
+      <p>Made with ☁️ by Avgustine Chynarbekov.</p>
+    </footer>
+  </body>
+</html>
+
